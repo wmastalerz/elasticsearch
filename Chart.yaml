@@ -8,7 +8,7 @@ dependencies:
   version: 10.x.x
 - name: common
   tags:
-  - bitnami-common
+  - common
   version: 2.x.x
 description: Elasticsearch is a distributed search and analytics engine. It is used
   for web search, log monitoring, and real-time analytics. Ideal for Big Data applications.
