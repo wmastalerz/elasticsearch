@@ -262,15 +262,13 @@ $ helm install my-release -f values.yaml bitnami/kibana
 
 It is strongly recommended to use immutable tags in a production environment. This ensures your deployment does not change automatically if the same tag is updated with a different image.
 
-Bitnami will release a new chart updating its containers if a new version of the main container, significant changes, or critical vulnerabilities exist.
-
 ### Change Kibana version
 
 To modify the application version used in this chart, specify a different version of the image using the `image.tag` parameter and/or a different repository using the `image.repository` parameter. Refer to the [chart documentation for more information on these parameters and how to use them with images from a private registry](https://docs.bitnami.com/kubernetes/apps/kibana/configuration/change-image-version/).
 
 ### Use custom configuration
 
-The Bitnami Kibana chart supports using custom configuration settings. For example, to mount a custom `kibana.yml` you can create a ConfigMap like the following:
+The Kibana chart supports using custom configuration settings. For example, to mount a custom `kibana.yml` you can create a ConfigMap like the following:
 
 ```yaml
 apiVersion: v1
@@ -306,11 +304,11 @@ Alternatively, you can use a ConfigMap or a Secret with the environment variable
 
 ### Use custom initialization scripts
 
-For advanced operations, the Bitnami Kibana chart allows using custom initialization scripts that will be mounted in `/docker-entrypoint.init-db`. Mount these extra scripts using a ConfigMap or a Secret (in case of sensitive data) and specify them via the `initScriptsCM` and `initScriptsSecret` chart parameters. Refer to the [chart documentation on custom initialization scripts](https://docs.bitnami.com/kubernetes/apps/kibana/administration/use-custom-init-scripts/) for an example.
+For advanced operations, Kibana chart allows using custom initialization scripts that will be mounted in `/docker-entrypoint.init-db`. Mount these extra scripts using a ConfigMap or a Secret (in case of sensitive data) and specify them via the `initScriptsCM` and `initScriptsSecret` chart parameters. Refer to the [chart documentation on custom initialization scripts](https://docs.bitnami.com/kubernetes/apps/kibana/administration/use-custom-init-scripts/) for an example.
 
 ### Install plugins
 
-The Bitnami Kibana chart allows you to install a set of plugins at deployment time using the `plugins` chart parameter. Refer to the [chart documentation on installing plugins](https://docs.bitnami.com/kubernetes/apps/kibana/configuration/install-plugins/) for an example.
+The Kibana chart allows you to install a set of plugins at deployment time using the `plugins` chart parameter. Refer to the [chart documentation on installing plugins](https://docs.bitnami.com/kubernetes/apps/kibana/configuration/install-plugins/) for an example.
 
 ```console
 elasticsearch.hosts[0]=elasticsearch-host
@@ -354,13 +352,13 @@ As an alternative, you can use one of the preset configurations for pod affinity
 
 ## Persistence
 
-The [Bitnami Kibana](https://github.com/bitnami/containers/tree/main/bitnami/kibana) image can persist data. If enabled, the persisted path is `/bitnami/kibana` by default.
+The [Kibana](https://github.com/bitnami/containers/tree/main/bitnami/kibana) image can persist data. If enabled, the persisted path is `/bitnami/kibana` by default.
 
 The chart mounts a [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) at this location. The volume is created using dynamic volume provisioning.
 
 ### Add extra volumes
 
-The Bitnami Kibana chart supports mounting extra volumes (either PVCs, secrets or configmaps) by using the `extraVolumes` and `extraVolumeMounts` property. This can be combined with advanced operations like adding extra init containers and sidecars.
+The Kibana chart supports mounting extra volumes (either PVCs, secrets or configmaps) by using the `extraVolumes` and `extraVolumeMounts` property. This can be combined with advanced operations like adding extra init containers and sidecars.
 
 ### Adjust permissions of persistent volume mountpoint
 

@@ -1,6 +1,6 @@
-# Bitnami Common Library Chart
+# Cmmon Library Chart
 
-A [Helm Library Chart](https://helm.sh/docs/topics/library_charts/#helm) for grouping common logic between bitnami charts.
+A [Helm Library Chart](https://helm.sh/docs/topics/library_charts/#helm) for grouping common logic between charts.
 
 ## TL;DR
 
@@ -28,7 +28,7 @@ data:
 
 This chart provides a common template helpers which can be used to develop new charts using [Helm](https://helm.sh) package manager.
 
-Bitnami charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm Charts in clusters.
+Charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm Charts in clusters.
 
 ## Prerequisites
 
@@ -319,7 +319,7 @@ $ helm install test mychart --set path.to.value00="",path.to.value01=""
 
 - Previous versions of this Helm Chart use `apiVersion: v1` (installable by both Helm 2 and 3), this Helm Chart was updated to `apiVersion: v2` (installable by Helm 3 only). [Here](https://helm.sh/docs/topics/charts/#the-apiversion-field) you can find more information about the `apiVersion` field.
 - Use `type: library`. [Here](https://v3.helm.sh/docs/faq/#library-chart-support) you can find more information.
-- The different fields present in the *Chart.yaml* file has been ordered alphabetically in a homogeneous way for all the Bitnami Helm Charts
+- The different fields present in the *Chart.yaml* file has been ordered alphabetically in a homogeneous way for all the Helm Charts
 
 **Considerations when upgrading to this version**
 
@@ -334,8 +334,6 @@ $ helm install test mychart --set path.to.value00="",path.to.value01=""
 - https://helm.sh/blog/migrate-from-helm-v2-to-helm-v3/
 
 ## License
-
-Copyright &copy; 2022 Bitnami
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

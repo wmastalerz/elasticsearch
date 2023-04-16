@@ -57,7 +57,7 @@ diagnosticMode:
 
 ## @section Kibana parameters
 
-## Bitnami Kibana image version
+## Kibana image version
 ## ref: https://hub.docker.com/r/bitnami/kibana/tags/
 ## @param image.registry Kibana image registry
 ## @param image.repository Kibana image repository

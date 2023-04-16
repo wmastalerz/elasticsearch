@@ -1,12 +1,12 @@
 <!--- app-name: Elasticsearch -->
 
-# Bitnami Elasticsearch Stack
+# Elasticsearch Stack
 Elasticsearch helm chart
                          
 ## TL;DR
 
 ```console
-$ helm install my-release bitnami/elasticsearch
+$ helm install my-release ./elasticsearch
 ```
 
 These commands deploy Elasticsearch on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
@@ -630,8 +630,6 @@ $ helm install my-release -f values.yaml bitnami/elasticsearch
 
 It is strongly recommended to use immutable tags in a production environment. This ensures your deployment does not change automatically if the same tag is updated with a different image.
 
-Bitnami will release a new chart updating its containers if a new version of the main container, significant changes, or critical vulnerabilities exist.
-
 ### Change ElasticSearch version
 
 To modify the ElasticSearch version used in this chart you can specify a [valid image tag](https://hub.docker.com/r/bitnami/elasticsearch/tags/) using the `image.tag` parameter. For example, `image.tag=X.Y.Z`. This approach is also applicable to other images like exporters.
@@ -712,7 +710,7 @@ Alternatively, you can use a ConfigMap or a Secret with the environment variable
 
 ### Using custom init scripts
 
-For advanced operations, the Bitnami Elasticsearch charts allows using custom init scripts that will be mounted inside `/docker-entrypoint.init-db`. You can include the file directly in your `values.yaml` with `initScripts`, or use a ConfigMap or a Secret (in case of sensitive data) for mounting these extra scripts. In this case you use the `initScriptsCM` and `initScriptsSecret` values.
+Elasticsearch charts allows using custom init scripts that will be mounted inside `/docker-entrypoint.init-db`. You can include the file directly in your `values.yaml` with `initScripts`, or use a ConfigMap or a Secret (in case of sensitive data) for mounting these extra scripts. In this case you use the `initScriptsCM` and `initScriptsSecret` values.
 
 ```console
 initScriptsCM=special-scripts
@@ -771,7 +769,7 @@ As an alternative, you can use of the preset configurations for pod affinity, po
 
 ## Persistence
 
-The [Bitnami Elasticsearch](https://github.com/bitnami/containers/tree/main/bitnami/elasticsearch) image stores the Elasticsearch data at the `/bitnami/elasticsearch/data` path of the container.
+The [Elasticsearch](https://github.com/bitnami/containers/tree/main/bitnami/elasticsearch) image stores the Elasticsearch data at the `/bitnami/elasticsearch/data` path of the container.
 
 By default, the chart mounts a [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) at this location. The volume is created using dynamic volume provisioning. See the [Parameters](#parameters) section to configure the PVC.
 
@@ -790,8 +788,6 @@ Find more information about how to deal with common errors related to Bitnami's 
 
 
 ## License
-
-Copyright &copy; 2022 Bitnami
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

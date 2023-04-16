@@ -1,6 +1,6 @@
 # Common Library Chart
 
-A [Helm Library Chart](https://helm.sh/docs/topics/library_charts/#helm) for grouping common logic between bitnami charts.
+A [Helm Library Chart](https://helm.sh/docs/topics/library_charts/#helm) for grouping common logic between charts.
 
 ## TL;DR
 
@@ -305,8 +305,6 @@ $ helm install test mychart --set path.to.value00="",path.to.value01=""
 ```
 
 ## License
-
-Copyright &copy; 2022 Bitnami
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
