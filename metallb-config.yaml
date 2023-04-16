@@ -1,11 +1,11 @@
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-  name: docs
+  name: example
   namespace: metallb-system
 spec:
   addresses:
-  - 192.168.1.40-192.168.1.49
+  - 172.19.255.200-172.19.255.250
 ---
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
