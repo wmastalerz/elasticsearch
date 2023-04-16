@@ -611,7 +611,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 $ helm install my-release \
   --set name=my-elastic,client.service.port=8080 \
-  bitnami/elasticsearch
+  ./elasticsearch
 ```
 
 The above command sets the Elasticsearch cluster name to `my-elastic` and REST port number to `8080`.
@@ -619,14 +619,14 @@ The above command sets the Elasticsearch cluster name to `my-elastic` and REST p
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install my-release -f values.yaml bitnami/elasticsearch
+$ helm install my-release -f values.yaml ./elasticsearch
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml).
 
 ## Configuration and installation details
 
-### [Rolling VS Immutable tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
+### [Rolling VS Immutable tags]
 
 It is strongly recommended to use immutable tags in a production environment. This ensures your deployment does not change automatically if the same tag is updated with a different image.
 
@@ -719,7 +719,7 @@ initScriptsSecret=special-scripts-sensitive
 
 ### Snapshot and restore operations
 
-As it's described in the [official documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-register-repository.html#snapshots-filesystem-repository), it's necessary to register a snapshot repository before you can perform snapshot and restore operations.
+It's necessary to register a snapshot repository before you can perform snapshot and restore operations.
 
 This chart allows you to configure Elasticsearch to use a shared file system to store snapshots. To do so, you need to mount a RWX volume on every Elasticsearch node, and set the parameter `snapshotRepoPath` with the path where the volume is mounted. In the example below, you can find the values to set when using a NFS Perstitent Volume:
 
