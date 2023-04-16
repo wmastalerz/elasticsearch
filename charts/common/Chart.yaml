@@ -9,7 +9,6 @@ keywords:
 - helper
 - template
 - function
-- bitnami
 name: common
 type: library
 version: 2.0.1
